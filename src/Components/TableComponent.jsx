@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { createLibro, deleteLibro } from "../app/services/libros";
+import { useEffect, useState } from "react";
+import { consultLibro, createLibro, deleteLibro } from "../app/services/libros";
 
 
 const TableComponent = () => {
@@ -12,6 +12,11 @@ const TableComponent = () => {
     const [id, setId] = useState()
     const [titulo, setTitulo] = useState()
     const [precio, setPrecio] = useState()
+    const [libros,setLibros] = useState([])
+
+    useEffect(() =>{
+        consultLibro().then((res) => setLibros(res.data))
+    },[libros])
 
     return (
         <>
@@ -32,16 +37,16 @@ const TableComponent = () => {
                 <td><input type="number" placeholder="Id" onChange={e => setId(e.target.value)}/></td>
                 <td><input type="text" placeholder="Titulo" onChange={e => setTitulo(e.target.value)}/></td>
                 <td><input type="number" placeholder="Precio" onChange={e => setPrecio(e.target.value)}/></td>
-                <td> <button onClick={()=> createLibro({titulo, precio})}>Create Libro</button></td>
+                <td> <button className="create" onClick={()=> createLibro({titulo, precio})}>Create Libro</button></td>
             </tr>
        
-                {data.map((item) => (
-                    <tr key={item.id}>
-                        <td>{item.id}</td>
-                        <td>{item.titulo}</td>
-                        <td>{item.precio}</td>
+                {libros.map((libro) => (
+                    <tr key={libro.id}>
+                        <td>{libro.id}</td>
+                        <td>{libro.titulo}</td>
+                        <td>{libro.precio}</td>
                         <td>
-                            <button onClick={() => deleteLibro(`ID: ${item.id}`)}>Baja</button>
+                            <button onClick={() => deleteLibro(libro.id)}>Baja</button>
                         </td>
                     </tr>
                 ))}

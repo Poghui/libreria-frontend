@@ -24,7 +24,15 @@ tr:hover {
 
 button {
     padding: 5px 10px;
-    background-color: #f50b0b;
+    background-color: #09e740;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+button.create {
+    padding: 5px 10px;
+    background-color: #000000;
     color: white;
     border: none;
     border-radius: 3px;
@@ -32,5 +40,9 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #ff0909;
+}
+
+button.create:hover {
+    background-color: #09e740;;
 }
