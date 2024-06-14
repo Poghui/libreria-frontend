@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('../img//1.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+.home-container {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  background: (0, 0, 0, 0.5) repeat scroll;
+}
+
+.greeting {
+  font-size: 3em;
+  margin: 0;
+  animation: color-change 5s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: #ff0040;
+  }
+
+  25% {
+    color: #ff8200;
+  }
+
+  50% {
+    color: #ffd700;
+  }
+
+  75% {
+    color: #00ff82;
+  }
+
+  100% {
+    color: #00d4ff;
+  }
+}

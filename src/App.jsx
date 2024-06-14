@@ -1,14 +1,10 @@
+
 import './App.css';
-import TableComponent from './Components/TableComponent';
+import Router from './app/Router';
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Tabla de Productos</h1>
-                <TableComponent />
-            </header>
-        </div>
+        <Router />
     );
 }
 
