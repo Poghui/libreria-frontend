@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import TableComponent from '../Components/TableComponent.jsx';
 import Layout from '../Components/Layout/Layout.jsx';
-import Home from './pages/Home.jsx';
+import Home from './pages/home/Home.jsx';
 const Router = () => (
   <BrowserRouter>
     <Layout>
